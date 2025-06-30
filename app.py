@@ -18,7 +18,6 @@ st.markdown("""
 <style>
 body, html {
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f5f7fa;
 }
 
 .sidebar-title {
