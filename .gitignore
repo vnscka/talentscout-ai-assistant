@@ -1,0 +1,15 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Local Streamlit secrets file
+.streamlit/secrets.toml
+
+# Virtual environment directory (if you're using one)
+venv/
+env/
+
+# Any other local temporary files or logs
+*.log
+.DS_Store # macOS specific
+.env # If you use a .env file for environment variables

@@ -1,0 +1,30 @@
+{
+    "messages": [
+        {
+            "role": "assistant",
+            "content": "\ud83d\udc4b Hello! I'm **TalentScout**, your AI hiring assistant. To begin your quick technical screening, please provide the following details:\n\n- **Full Name**\n- **Email**\n- **Phone Number**\n- **Years of Tech Experience**\n- **Preferred Role(s)**\n- **Current Location**\n- **Your Tech Stack**\n\nOnce I have this, I'll generate a few technical questions for you. \ud83d\ude80"
+        },
+        {
+            "role": "assistant",
+            "content": "Language changed to **Hindi**. Please continue the conversation. New responses will be in this language."
+        },
+        {
+            "role": "user",
+            "content": "ji"
+        },
+        {
+            "role": "assistant",
+            "content": "I couldn't extract the information. Please provide details in this format:\nFull Name: John Doe, Email: john@example.com, Tech Stack: Python, SQL"
+        }
+    ],
+    "candidate_info": {},
+    "info_requested": true,
+    "info_collected": false,
+    "tech_questions_asked": false,
+    "generated_tech_questions": "",
+    "conversation_ended": false,
+    "Youtube_map": {},
+    "current_question_idx": 0,
+    "awaiting_follow_up": false,
+    "selected_language": "Hindi"
+}
