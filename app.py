@@ -18,20 +18,17 @@ st.markdown("""
 <style>
 body, html {
     font-family: 'Segoe UI', sans-serif;
+    /* Removed explicit background-color to let Streamlit's theme control the main page background */
 }
 
-.sidebar-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
-}
-.sidebar-desc {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 1.5rem;
+/* Ensure general text within Streamlit containers is visible */
+div[data-testid="stVerticalBlock"],
+div[data-testid="stHorizontalBlock"],
+div[data-testid="stMarkdownContainer"] {
+    color: var(--text-color); /* Use Streamlit's theme variable for text color */
 }
 
+/* Specific styling for custom message bubbles */
 .message {
     border-radius: 10px;
     padding: 0.9rem 1.1rem;
@@ -45,28 +42,47 @@ body, html {
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 .user {
-    background-color: #e7f1ff;
+    background-color: #e7f1ff; /* Light blue for user messages */
+    color: #1a1a1a; /* Dark text for user messages */
     align-self: flex-end;
     margin-left: auto;
     border: 1px solid #d0e0ff;
 }
 .assistant {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Very light gray for assistant messages */
+    color: #1a1a1a; /* Dark text for assistant messages */
     border: 1px solid #e0e0e0;
     align-self: flex-start;
     margin-right: auto;
 }
 
+/* Sidebar Titles and Descriptions */
+.sidebar-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color); /* Use Streamlit's theme variable */
+    margin-bottom: 0.5rem;
+}
+.sidebar-desc {
+    font-size: 14px;
+    color: var(--text-color); /* Use Streamlit's theme variable */
+    margin-bottom: 1.5rem;
+}
+
+/* Textarea for user input */
 textarea {
-    border: 1px solid #ccc !important;
+    border: 1px solid var(--border-color) !important; /* Use Streamlit's theme variable */
     border-radius: 8px !important;
     padding: 0.75rem !important;
     font-size: 15px !important;
+    background-color: var(--secondary-background-color) !important; /* Ensure it contrasts */
+    color: var(--text-color) !important; /* Ensure text is visible */
 }
 
-.st-emotion-cache-1c7y2vl.eczjsme11 { /* Targeting the Streamlit primary button by class */
+/* Main Streamlit Button */
+.st-emotion-cache-1c7y2vl.eczjsme11 { /* This is the "Send" button */
     background-color: #2e72d2;
-    color: white;
+    color: white; /* Ensure text is white */
     padding: 0.6rem 1.5rem;
     border-radius: 6px;
     font-size: 14px;
@@ -75,12 +91,14 @@ textarea {
 }
 .st-emotion-cache-1c7y2vl.eczjsme11:hover {
     background-color: #1a56a4;
-    color: white;
+    color: white; /* Ensure text remains white on hover */
 }
 
-div.stButton > button { /* Targeting general Streamlit buttons */
-    background-color: #ffffff;
-    border: 1px solid #ccc;
+/* General Streamlit Button */
+div.stButton > button {
+    background-color: var(--secondary-background-color); /* Use Streamlit's theme variable */
+    color: var(--text-color); /* Use Streamlit's theme variable */
+    border: 1px solid var(--border-color); /* Use Streamlit's theme variable */
     border-radius: 6px;
     padding: 0.4rem 1.2rem;
     font-size: 14px;
@@ -88,38 +106,41 @@ div.stButton > button { /* Targeting general Streamlit buttons */
     transition: all 0.2s ease;
 }
 div.stButton > button:hover {
-    background-color: #f3f3f3;
+    background-color: var(--background-color); /* Lighter hover in both themes */
 }
 
-/* Hide Streamlit's default header/footer/main menu */
+/* Hide Streamlit default elements */
 #MainMenu, header, footer {
     visibility: hidden;
 }
 
+/* Spinner color */
 .stSpinner > div > div {
-    border-top-color: #2e72d2; /* Spinner color */
+    border-top-color: #2e72d2;
 }
 
+/* Candidate Info Box */
 .candidate-info-box {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
+    background-color: var(--secondary-background-color); /* Use Streamlit's theme variable for background */
+    color: var(--text-color); /* Use Streamlit's theme variable for text */
+    border: 1px solid var(--border-color); /* Use Streamlit's theme variable for border */
     border-radius: 8px;
     padding: 1rem;
     margin-top: 1.5rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 .candidate-info-box h5 {
-    color: #2e72d2;
+    color: #2e72d2; /* Keep blue for heading, should be visible in both modes */
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
 }
 .candidate-info-box p {
     margin-bottom: 0.3rem;
     font-size: 0.95rem;
-    color: #333;
+    color: var(--text-color); /* Use Streamlit's theme variable for text */
 }
 .candidate-info-box strong {
-    color: #1a1a1a;
+    color: var(--text-color); /* Use Streamlit's theme variable for text */
 }
 </style>
 """, unsafe_allow_html=True)
